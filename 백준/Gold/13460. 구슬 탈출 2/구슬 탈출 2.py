@@ -1,3 +1,11 @@
+# 지나갔는지 안지나갔는지 체크하기 위한 visited 를 4차원으로 구현
+# why? R구슬 위치 x,y 와 B구슬 위치 x,y 를 저장하기 위해
+
+# init() 함수 :  R구슬 위치와 B구슬 위치를 큐에 삽입
+# bfs() 함수 : 위,아래,왼,오른 #(벽)이거나 O(구멍) 만나기 전까지 계속 직진
+#              -> R구슬과 B구슬이 같으면, count 값을 비교를 통해 큰 값이 더 늦게 도착했으므로 한칸 뒤로 이동
+#              -> Visited False이면 아직 방문하지 않은거니까, 큐에 삽입하고 True로 변경
+
 from collections import deque
 from sys import stdin
 input=stdin.readline
