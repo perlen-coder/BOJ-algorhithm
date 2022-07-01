@@ -20,8 +20,8 @@ def dfs(x, y):
         ny = y + dy[i]
 
         if(0 <= nx < n) and (0 <= ny < n) and visited[nx][ny] == False:
-                if graph[nx][ny] == graph[x][y]:
-                    dfs(nx,ny)
+            if graph[nx][ny] == graph[x][y]:
+                dfs(nx,ny)
 
 # 일반인의 경우
 visited = [[False for _ in range(n)] for _ in range(n)]
@@ -30,8 +30,8 @@ cnt_1 = 0
 for i in range(n):
     for j in range(n):
         # 방문하지 않은 좌표이면 dfs로 넣음
-        # if (i, j) not in visited:
-        if not visited[i][j]:
+        # if not visited[i][j]:
+        if visited[i][j] == False:
             dfs(i, j)
             cnt_1 += 1
 
@@ -48,8 +48,8 @@ cnt_2 = 0
 for i in range(n):
     for j in range(n):
         # 방문하지 않은 좌표이면 dfs로 넣음
-        # if (i, j) not in visited:
-        if not visited[i][j]:
+        # if not visited[i][j]:
+        if visited[i][j] == False:
             dfs(i, j)
             cnt_2 += 1
 
